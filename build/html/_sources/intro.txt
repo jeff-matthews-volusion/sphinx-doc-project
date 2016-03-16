@@ -1,0 +1,17 @@
+############
+Introduction
+############
+
+I'm test driving Sphinx with the Read the Docs theme. I'd like to get this set up for some kind of documentation project at home or possibly as a proof of concept for somethign at work.
+
+*******
+Purpose
+*******
+
+Lorem ipsum dolor sit amet, dicit quodsi viderer per eu. Vim tacimates incorrupte in, ut sea prima virtute hendrerit, ea quo perfecto tacimates. Vix cu mazim liber mandamus, augue bonorum oportere eam ei. At alienum definiebas pro. Pro et adipiscing moderatius constituam, ei cum tempor graecis.
+
+*****
+Scope
+*****
+
+Lorem ipsum dolor sit amet, dicit quodsi viderer per eu. Vim tacimates incorrupte in, ut sea prima virtute hendrerit, ea quo perfecto tacimates. Vix cu mazim liber mandamus, augue bonorum oportere eam ei. At alienum definiebas pro. Pro et adipiscing moderatius constituam, ei cum tempor graecis.
