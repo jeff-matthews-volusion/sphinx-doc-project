@@ -16,6 +16,7 @@ Contents:
    build_mdocs
    git_cmds
    swagger
+   nginx
    
 .. Indices and tables
 .. ==================
