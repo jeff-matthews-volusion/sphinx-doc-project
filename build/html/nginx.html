@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Build &amp; Deploy Zotac Docs &mdash; Process Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Process Docs 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="Build Swagger API Reference" href="swagger.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Process Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="build_mdocs.html">Build &amp; Deploy mDocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_cmds.html">Working with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swagger.html">Build Swagger API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Build &amp; Deploy Zotac Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-edit-source-content">Create/Edit Source Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-local-output">Build Local Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publish-local-output">Publish Local Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploy-content-to-a-microdev-environment">Deploy Content to a MicroDev Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finish-a-feature">Finish a Feature</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Process Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Build &amp; Deploy Zotac Docs</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/nginx.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="build-deploy-zotac-docs">
+<h1>Build &amp; Deploy Zotac Docs<a class="headerlink" href="#build-deploy-zotac-docs" title="Permalink to this headline">¶</a></h1>
+<p>AS I learn more about using Snort, nginx, and static site generators (e.g., Sphinx, Jekyll), I need a place to document all the work I do. Zontac Docs is the central knowledge base for home projects.</p>
+<p>Here are some general details about this project:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="25%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Description</th>
+<th class="head">Location</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Source files</td>
+<td>Version controlled using Git
+Hosted on Github</td>
+<td><a class="reference external" href="https://github.com/jeff-matthews/sphinx-doc-project">sphinx-doc-project</a></td>
+</tr>
+<tr class="row-odd"><td>Compiled output</td>
+<td>Version controlled using Git
+Hosted on Github</td>
+<td><a class="reference external" href="https://github.com/jeff-matthews">blah</a></td>
+</tr>
+<tr class="row-even"><td>Automation</td>
+<td>We use a script to automate
+the build and deploy processes</td>
+<td><a class="reference external" href="https://github.com/jeff-matthews/scripts">scripts</a></td>
+</tr>
+</tbody>
+</table>
+<p>This is the workflow:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Create/edit source content</li>
+<li>Build local output</li>
+<li>Publish local output</li>
+</ol>
+</div></blockquote>
+<p>Before you begin, make sure you&#8217;ve set up your development environment.</p>
+<blockquote>
+<div><ul class="simple">
+<li>SSH Keys</li>
+<li>SSH Agent</li>
+<li>Text editor</li>
+</ul>
+</div></blockquote>
+<div class="section" id="create-edit-source-content">
+<h2>Create/Edit Source Content<a class="headerlink" href="#create-edit-source-content" title="Permalink to this headline">¶</a></h2>
+<p>Under normal circumstances, we follow the Git flow process to create and deploy documentation. Feature branches represent documentation changes. You should also use feature branches for substantial changes that result from backlog work items. For minor changes, you can make changes directly to the <code class="docutils literal"><span class="pre">develop</span></code> branch.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Clone the <a class="reference external" href="https://github.com/mozu/mdocs-flare-source">mdocs-flare-source</a> repo.</p>
+</li>
+<li><p class="first">Open a terminal and navigate to the cloned repo.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">git</span> <span class="pre">flow</span> <span class="pre">feature</span> <span class="pre">start</span> <span class="pre">&lt;my-feature&gt;</span></code></p>
+</li>
+<li><p class="first">Create, revise, or delete content.</p>
+</li>
+<li><p class="first">Build local output to verify format and layout.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Run the <code class="docutils literal"><span class="pre">build_mdocs.bat</span></code> file.</li>
+<li>Select option <strong>1</strong> or <strong>2</strong>.</li>
+<li>View the output.</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Deploy output to a MicroDev environment for stakeholder review.</p>
+</li>
+<li><p class="first">Notify stakeholders that content is ready for review.</p>
+</li>
+<li><p class="first">Revise content if necessary.</p>
+</li>
+<li><p class="first">Coordinate with team before running feature complete commands.</p>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="build-local-output">
+<h2>Build Local Output<a class="headerlink" href="#build-local-output" title="Permalink to this headline">¶</a></h2>
+<p>Both mDocs and API build to different output locations that need to be merged into a single location. The <code class="docutils literal"><span class="pre">build_mdocs.bat</span></code> script automates the build and merge process.</p>
+<p>To run the script:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Clone the <a class="reference external" href="https://github.com/mozu/mdocs">mdocs</a> repo.</li>
+<li>Navigate to <code class="docutils literal"><span class="pre">mdocs/batch</span> <span class="pre">file</span> <span class="pre">source</span></code>.</li>
+<li>Copy <code class="docutils literal"><span class="pre">build_mdocs_source.bat</span></code> to the <code class="docutils literal"><span class="pre">mdocs</span></code> directory and rename it <code class="docutils literal"><span class="pre">build_mdocs.bat</span></code> (ignored by git).</li>
+<li>Open <code class="docutils literal"><span class="pre">build_mdocs.bat</span></code> in a text editor.</li>
+<li>Configure the variables at the top of the file to match the directory paths on you local machine.</li>
+<li>Save and close the file.</li>
+</ol>
+</div></blockquote>
+<p>To build local output:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Run <code class="docutils literal"><span class="pre">./build_mdocs.bat</span></code>.</li>
+<li>Select option <strong>1</strong> or <strong>2</strong>.</li>
+<li>View content at <code class="docutils literal"><span class="pre">C:/mdocs/publish/index.htm</span></code>.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="publish-local-output">
+<h2>Publish Local Output<a class="headerlink" href="#publish-local-output" title="Permalink to this headline">¶</a></h2>
+<p>Publishing refers to the process of copying the compiled <code class="docutils literal"><span class="pre">sphinx-doc-project</span></code> output to the <code class="docutils literal"><span class="pre">nginx</span> <span class="pre">web</span> <span class="pre">server</span></code> on the ZOTAC box.</p>
+<p>TODO - I&#8217;ve automated this process using a script.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Run <code class="docutils literal"><span class="pre">make</span> <span class="pre">HTML</span></code>.</li>
+</ol>
+<p>#. Copy the <strong>build/html</strong> folder to the web server: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">cp</span> <span class="pre">-a</span> <span class="pre">~/git/sphinx-doc-project/build/html/</span> <span class="pre">/usr/share/nginx/html/docs</span></code>
+#.</p>
+</div></blockquote>
+</div>
+<div class="section" id="deploy-content-to-a-microdev-environment">
+<h2>Deploy Content to a MicroDev Environment<a class="headerlink" href="#deploy-content-to-a-microdev-environment" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note:</strong> You must first create a remote branch in the <code class="docutils literal"><span class="pre">Mozu.AuthContent</span></code> repo for the MicroDev environment associated with your vertical (e.g., <code class="docutils literal"><span class="pre">MicroDev04-HP</span></code>). This is a one-time set up task. You can reuse the same branch for all subsequent deployments.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Open a terminal, navigate to the <code class="docutils literal"><span class="pre">mdocs</span></code> repo, and enter <code class="docutils literal"><span class="pre">build_mdocs.bat</span></code>.</li>
+<li>Select option 3 to build <code class="docutils literal"><span class="pre">mDocs</span></code> and <code class="docutils literal"><span class="pre">API</span></code> output.</li>
+<li>When complete, commit and push the changes to the <code class="docutils literal"><span class="pre">Mozu.AuthContent</span> <span class="pre">repo</span></code>. Make sure you push to the correct branch.</li>
+<li>Go to <a class="reference external" href="http://tfs.corp.volusion.com:8080/tfs/VNext/v2Mozu/_build#_a=completed&amp;definitionId=864">TFS</a> and make note of the build name/number. You&#8217;ll need it for the next step.</li>
+<li>Got to <a class="reference external" href="http://mozupus/app#/projects/mozu-authcontent">Mozupus</a>, click the build name/number from the previous step.</li>
+<li>Click <strong>Deploy</strong> &gt; <strong>MicroDev04-HP</strong>.</li>
+<li>Click <strong>Deploy Now</strong>.</li>
+</ol>
+</div></blockquote>
+<p>When the build is complete, you can view the docs at one of the following URLs (depending on which environment you deployed to):</p>
+<blockquote>
+<div><ul class="simple">
+<li>MicroDev01-HP &#8211;&gt; <a class="reference external" href="http://microdev01.dev.volusion.com/docs/index.htm">http://microdev01.dev.volusion.com/docs/index.htm</a></li>
+<li>MicroDev02-HP &#8211;&gt; <a class="reference external" href="http://microdev02.dev.volusion.com/docs/index.htm">http://microdev02.dev.volusion.com/docs/index.htm</a></li>
+<li>MicroDev03-HP &#8211;&gt; <a class="reference external" href="http://microdev03.dev.volusion.com/docs/index.htm">http://microdev03.dev.volusion.com/docs/index.htm</a></li>
+<li>MicroDev04-HP &#8211;&gt; <a class="reference external" href="http://microdev04.dev.volusion.com/docs/index.htm">http://microdev04.dev.volusion.com/docs/index.htm</a></li>
+</ul>
+</div></blockquote>
+<p><strong>Note:</strong> These branches are never merged into <code class="docutils literal"><span class="pre">develop</span></code> or <code class="docutils literal"><span class="pre">master</span></code>. The <code class="docutils literal"><span class="pre">develop</span></code> branch gets builds from the <code class="docutils literal"><span class="pre">develop</span></code> branch of the <code class="docutils literal"><span class="pre">mdocs-flare-source</span></code> repo.</p>
+</div>
+<div class="section" id="finish-a-feature">
+<h2>Finish a Feature<a class="headerlink" href="#finish-a-feature" title="Permalink to this headline">¶</a></h2>
+<p>When you finish a feature, you must enter the following command to merge it back into the develop branch:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">git</span> <span class="pre">flow</span> <span class="pre">feature</span> <span class="pre">finish</span> <span class="pre">&lt;my-feature&gt;</span></code></div></blockquote>
+<p>Since everyone on the team could potentially have multiple feature branches that need to be merged for a release, it&#8217;s best to coordinate when everyone enters the <code class="docutils literal"><span class="pre">feature</span> <span class="pre">finish</span></code> command.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="swagger.html" class="btn btn-neutral" title="Build Swagger API Reference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Jeff Matthews.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
